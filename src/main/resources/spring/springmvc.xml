@@ -9,17 +9,8 @@
 		http://www.springframework.org/schema/context 
 		http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 	
-	<mvc:resources location="/structure/" mapping="/structure/**"/>
-	<mvc:resources location="/laypage/" mapping="/laypage/**"/>
-	<mvc:resources location="/laydate/" mapping="/laydate/**"/>
-	<mvc:resources location="/layer/" mapping="/layer/**"/>
-	<mvc:resources location="/ueditor/" mapping="/ueditor/**"/>
-	<mvc:resources location="/pic/" mapping="/pic/**"/>
-	<mvc:resources location="/admin/" mapping="/admin/**"/>
-	
-	<mvc:resources location="/images/" mapping="/images/**"/>
-	<mvc:resources location="/css/" mapping="/css/**"/>
-	<mvc:resources location="/js/" mapping="/js/**"/>
+	<mvc:resources location="/layui/" mapping="/layui/**"/>
+	<mvc:resources location="/demo/" mapping="/demo/**"/>
 	
 	<!-- 视图解析器 -->
 	<!-- InternalResourceViewResolver：支持JSP视图解析 -->
