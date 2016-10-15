@@ -11,7 +11,7 @@ import javax.websocket.server.ServerEndpoint;
 public class SocketServer {
     @OnOpen
     public void onOpen(Session session){
-        System.out.println(1);
+        
     }
 
     /**
@@ -29,7 +29,7 @@ public class SocketServer {
      */
     @OnMessage
     public void onMessage(String message, Session session) {
-        
+    	System.out.println(message);
     }
 
     /**
