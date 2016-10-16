@@ -10,7 +10,8 @@
 		http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 	
 	<mvc:resources location="/layui/" mapping="/layui/**"/>
-	<mvc:resources location="/demo/" mapping="/demo/**"/>
+	<mvc:resources location="/css/" mapping="/css/**"/>
+	<mvc:resources location="/images/" mapping="/images/**"/>
 	
 	<!-- 视图解析器 -->
 	<!-- InternalResourceViewResolver：支持JSP视图解析 -->

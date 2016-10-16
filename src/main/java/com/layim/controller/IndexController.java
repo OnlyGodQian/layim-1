@@ -1,6 +1,5 @@
 package com.layim.controller;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,11 +20,18 @@ import com.layim.po.User;
 @Controller
 public class IndexController {
 	
+	@RequestMapping("/chat")
+	public String chat(){
+		return "WEB-INF/chat.jsp";
+	}
+	
 	@RequestMapping("/getList")
-	public void getList(HttpServletResponse response){
+	public void getList(HttpServletResponse response) throws Exception{
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("application/json");
+		
 		Data data = new Data();
+		//设置我的信息
 		Mine mine = new Mine();
 		mine.setUsername("我的昵称");
 		mine.setId(1000);
@@ -33,12 +39,13 @@ public class IndexController {
 		mine.setSign("我是个性签名");
 		mine.setAvatar("http://avatar.52pojie.cn/data/avatar/000/13/34/66_avatar_middle.jpg");
 		data.setMine(mine);
+		//设置好友信息
 		List<Friend> friendList = new ArrayList<Friend>();
 		Friend friend = new Friend();
-		friend.setGroupname("后端马吊");
-		friend.setId("1");
-		friend.setOnline("2");
-		List<User> userList = new ArrayList<User>();
+		friend.setGroupname("后端马吊");//好友分组名字
+		friend.setId("1");//分组ID
+		friend.setOnline("2");//在线数量，可以不传
+		List<User> userList = new ArrayList<User>();//分组下的好友列表
 		User user = new User();
 		user.setAvatar("http://avatar.52pojie.cn/data/avatar/000/13/34/66_avatar_middle.jpg");
 		user.setUsername("沈少快");
@@ -47,6 +54,7 @@ public class IndexController {
 		friend.setList(userList);
 		friendList.add(friend);
 		data.setFriend(friendList);
+		//设置分组信息
 		List<Group> groupList = new ArrayList<Group>();
 		Group group = new Group();
 		group.setAvatar("http://avatar.52pojie.cn/data/avatar/000/13/34/66_avatar_middle.jpg");
@@ -59,10 +67,7 @@ public class IndexController {
 		init.setMsg("成功");
 		init.setData(data);
 		Object object = JSONObject.toJSON(init);
-		try {
-			response.getWriter().println(object);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
+		response.getWriter().println(object);
 	}
 }
