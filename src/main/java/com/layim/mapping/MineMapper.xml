@@ -109,4 +109,11 @@
       status = #{status,jdbcType=SMALLINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="selectAllUser" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from users
+  </select>
+  
 </mapper>

@@ -102,7 +102,13 @@
 			<artifactId>jackson-core-asl</artifactId>
 			<version>1.9.11</version>
 		</dependency>
-		
+		<!-- mybatis分页 -->
+		<dependency>
+		    <groupId>com.github.pagehelper</groupId>
+		    <artifactId>pagehelper</artifactId>
+		    <version>3.6.3</version>
+		</dependency>
+				
 		
 	</dependencies>
 

@@ -1,5 +1,7 @@
 package com.layim.mapping;
 
+import java.util.List;
+
 import com.layim.po.Mine;
 
 public interface MineMapper {
@@ -16,4 +18,6 @@ public interface MineMapper {
     int updateByPrimaryKey(Mine record);
 
 	Mine selectByUsername(String username);
+	
+	List<Mine> selectAllUser();
 }

@@ -1,5 +1,7 @@
 package com.layim.service;
 
+import java.util.List;
+
 import com.layim.po.Mine;
 import com.layim.po.User;
 
@@ -13,4 +15,6 @@ public interface UserService {
 	public Mine selectByUsername(String username);
 	
 	public int updateUserByid(Mine mine);
+	
+	public List<Mine> selectAllUser();
 }

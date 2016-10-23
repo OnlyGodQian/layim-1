@@ -70,4 +70,5 @@ public class IndexController {
 		
 		response.getWriter().println(object);
 	}
+	
 }
